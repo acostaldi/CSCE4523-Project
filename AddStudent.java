@@ -28,15 +28,8 @@ public class AddStudent {
       student_id = args[1];
       major = args[2];
 
-      // Get the next id
-      String q = "select IFNULL(max(ID), 0) as max_id from ITEM";
-      ResultSet result = myDB.rawQuery(q);
-      int next_id = 1;
-      if (result.next()) // get first row of result set
-         next_id += result.getInt("max_id");
-
       // Insert the new restaurant
-      String input = "'" + next_id + "','" + name + "','" + student_id + "','" + major + "'";
+      String input = "'" + name + "','" + student_id + "','" + major + "'";
       myDB.insert("ITEM", input); // insert new student
 
       // For debugging purposes: Show the database after the insert
