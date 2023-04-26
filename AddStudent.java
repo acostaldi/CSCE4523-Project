@@ -1,15 +1,11 @@
 import java.sql.*;
 
-/*
-jdbc_insert_item.java    // java program that is called by php that just does the insert; calls jdbc_db.java to connect and do the actual insert
-jdbc_db.java // class (no main program) that has useful methods
-*/
 
-public class jdbc_insert_item {
+public class AddStudent {
    // The main program that inserts a restaurant
    public static void main(String[] args) throws SQLException {
-      String Username = "MYMYSQLUSERNAME"; // Change to your own username
-      String mysqlPassword = "MYMYSQLPASS"; // Change to your own mysql Password
+      String Username = "amcostal"; // Change to your own username
+      String mysqlPassword = "eiTaa8co"; // Change to your own mysql Password
 
       // Connect to the database
       jdbc_db myDB = new jdbc_db();
@@ -23,16 +19,14 @@ public class jdbc_insert_item {
 
       // Parse input string to get restauranrestaurant Name and Address
       String name;
-      String supplier_id;
-      String quantity;
-      String unit_price;
+      String student_id;
+      String major;
 
       // Read command line arguments
       // args[0] is the first parameter
       name = args[0];
-      supplier_id = args[1];
-      quantity = args[2];
-      unit_price = args[3];
+      student_id = args[1];
+      major = args[2];
 
       // Get the next id
       String q = "select IFNULL(max(ID), 0) as max_id from ITEM";
@@ -42,8 +36,8 @@ public class jdbc_insert_item {
          next_id += result.getInt("max_id");
 
       // Insert the new restaurant
-      String input = "'" + next_id + "','" + name + "','" + supplier_id + "','" + quantity + "','" + unit_price + "'";
-      myDB.insert("ITEM", input); // insert new restaurant
+      String input = "'" + next_id + "','" + name + "','" + student_id + "','" + major + "'";
+      myDB.insert("ITEM", input); // insert new student
 
       // For debugging purposes: Show the database after the insert
       builder.append("<br><br><br> Table ITEM after:" + myDB.query(query1));
