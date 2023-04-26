@@ -2,11 +2,9 @@ mysql <<EOFMYSQL
 use amcostal;
 show tables;
 
-DROP TABLE SECTION;
-DROP TABLE PROFESSOR;
-DROP TABLE COURSE;
-DROP TABLE ROOM;
-DROP TABLE DEPT;
+DROP TABLE Applications;
+DROP TABLE Jobs;
+DROP TABLE Students;
 
 CREATE TABLE Students (
     StudentId INT PRIMARY KEY,
