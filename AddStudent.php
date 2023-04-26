@@ -5,7 +5,14 @@
         <form action="AddStudent.php" method="post">
             Student Name: <input type="text" name="name"><br>
             Student ID: <input type="text" name="student_id"><br>
-            Major: <input type="text" name="major"><br>
+            Major: 
+            <input list="majors" name="major">
+            <datalist id="majors">
+                <option value="Computer Science">
+                <option value="Computer Engineering">
+                <option value="Mechanical Engineering">
+                <option value="Electrical Engineering">
+            </datalist>
             <input name="submit" type="submit" >
         </form>
     <body>
