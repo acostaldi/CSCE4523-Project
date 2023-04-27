@@ -1,7 +1,6 @@
 import java.sql.*;
 
 public class AddJob {
-   // The main program that inserts a restaurant
    public static void main(String[] args) throws SQLException {
       String Username = "amcostal"; // Change to your own username
       String mysqlPassword = "eiTaa8co"; // Change to your own mysql Password
@@ -35,7 +34,6 @@ public class AddJob {
       if (result.next()) // get first row of result set
          job_id += result.getInt("max_id");
 
-      // Insert the new restaurant
       String input = "'" + job_id + "','" + CompanyName + "','" + JobTitle + "','" + Salary  + "','" + DesiredMajor + "'";
       //System.out.println("DEBUG AddJob L34: " + input);
       myDB.insert("Jobs", input); // insert new student
