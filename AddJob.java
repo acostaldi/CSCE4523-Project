@@ -17,7 +17,6 @@ public class AddJob {
       //System.out.println("DEBUG(AddStudent L11):" + query1);
       builder.append("<br> Table Jobs before:" + myDB.query(query1) + "<br>");
 
-      // Parse input string to get restauranrestaurant Name and Address
       String CompanyName;
       String JobTitle;
       String Salary;
