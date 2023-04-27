@@ -1,6 +1,6 @@
 <html>
     <body>
-        <h1>Enter Student Information.</h1>
+        <h1>Enter Job Information.</h1>
         
         <form action="AddJob.php" method="post">
             Company Name: <input type="text" name="CompanyName"><br>

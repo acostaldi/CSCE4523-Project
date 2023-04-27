@@ -45,6 +45,20 @@ public class jdbc_db {
       return builder.toString();
    }
 
+   public String specialQuery(String q) {
+      StringBuilder builder = new StringBuilder();
+   
+      try {
+         ResultSet resultSet = statement.executeQuery(q);
+         if (resultSet.next()) {
+            builder.append(resultSet.getString(1));
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      }
+      return builder.toString();
+   }
+
    // Execute an SQL query passed in as a String parameter
    // and print the resulting relation
    public ResultSet rawQuery(String q) {
