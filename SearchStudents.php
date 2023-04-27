@@ -5,15 +5,26 @@
         <form action="SearchStudents.php" method="post">
             Major: 
             <input list="majors" name="major">
-            <datalist id="majors">
-                <option value="Computer Science">
-                <option value="Computer Engineering">
-                <option value="Mechanical Engineering">
-                <option value="Electrical Engineering">
-                <option value="All">
-            </datalist>
+            <datalist id="majors"></datalist>
             <input name="submit" type="submit" >
         </form>
+
+        <script>
+            // Fetch the list of all majors from a JSON file
+            fetch('majors.json')
+                .then(response => response.json())
+                .then(majors => {
+                    const datalist = document.getElementById('majors');
+                    // Add each major as an option to the datalist
+                    majors.forEach(major => {
+                        const option = document.createElement('option');
+                        option.value = major;
+                        datalist.appendChild(option);
+                    });
+                })
+                .catch(error => console.error(error));
+        </script>
+
     <body>
 <html>
 
