@@ -1,4 +1,9 @@
 <html>
+    <style>
+    body {
+        background-color: beige;
+        }
+    </style>
     <body>
         <h1>Enter Application Information.</h1>
         

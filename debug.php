@@ -1,4 +1,9 @@
 <html>
+<style>
+    body {
+        background-color: beige;
+        }
+</style>
 <body>
 <h3>Enter your name:</h3>
 
