@@ -2,8 +2,8 @@ import java.sql.*;
 
 public class AddStudent {
    public static void main(String[] args) throws SQLException {
-      String Username = "amcostal"; // Change to your own username
-      String mysqlPassword = "eiTaa8co"; // Change to your own mysql Password
+      String Username = "MYSQLUSERNAME"; // Change to your own username
+      String mysqlPassword = "MYSQLPASSWORD"; // Change to your own mysql Password
 
       // Connect to the database
       jdbc_db myDB = new jdbc_db();

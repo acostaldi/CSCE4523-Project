@@ -1,6 +1,11 @@
 <html>
     <body>
         <h1>Enter Student Major.</h1>
+        <style>
+        body {
+            background-color: beige;
+        }
+        </style>
         
         <form action="SearchStudents.php" method="post">
             Major: 

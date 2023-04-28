@@ -3,10 +3,9 @@
         body {
             background-color: beige;
         }
-        </style>
-        <style>
-  form { display: inline; }
-</style>
+    
+        form { display: inline; }
+    </style>
     <body>
         <h2>All Applications&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;Applications by Major
             &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Applications by Job ID
@@ -18,15 +17,10 @@
     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <form action="SearchApplications.php" method="post">
         Major: 
+
             <input list="majors" name="major">
-            <datalist id="majors">
-                <option value="Computer Science">
-                <option value="Computer Engineering">
-                <option value="Mechanical Engineering">
-                <option value="Electrical Engineering">
-                <option value="All">
-            </datalist>
-            <input name="major" type="submit" >
+            <datalist id="majors"></datalist>
+            <input name="submit" type="submit" >
         </form>
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <form action="SearchApplications.php" method="post">
@@ -42,6 +36,22 @@
     </form>
     <body>
 <html>
+
+<script>
+    // Fetch the list of all majors from a JSON file
+    fetch('majors.json')
+        .then(response => response.json())
+        .then(majors => {
+        const datalist = document.getElementById('majors');
+                // Add each major as an option to the datalist
+                majors.forEach(major => {
+                const option = document.createElement('option');
+                option.value = major;
+                datalist.appendChild(option);
+                });
+            })
+        .catch(error => console.error(error));
+</script>
 
 <?php
 if (isset($_POST['all'])) 

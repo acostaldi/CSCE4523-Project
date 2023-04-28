@@ -3,8 +3,8 @@ import java.sql.*;
 public class PrintJobs {
    // The main program that inserts a restaurant
    public static void main(String[] args) throws SQLException {
-      String Username = "amcostal"; // Change to your own username
-      String mysqlPassword = "eiTaa8co"; // Change to your own mysql Password
+      String Username = "MYSQLUSERNAME"; // Change to your own username
+      String mysqlPassword = "MYSQLPASSWORD"; // Change to your own mysql Password
       StringBuilder builder = new StringBuilder();
 
       // Connect to the database
